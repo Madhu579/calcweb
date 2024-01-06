@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container" style="background-color: black;border-radius: 20px;max-width: max-content;max-height: max-content;">
+        <h1 class="text-primary text-center">Calculator</h1>
+        <div class="row">
+            <div class="col">
+                <input type="text"  value="0" style="margin: 12px; width: 97%;">
+            </div>
+        </div>
+        <div class="row text-success">
+            <div class="col text-center">
+                <button class="text-danger">AC</button>
+            </div>
+            <div class="col" id="num">
+                <button class="text-danger">DEL</button>
+            </div>
+            <div class="col  text-center" id="num">
+                <button class="text-success">%</button>
+            </div>
+            <div class="col  text-center" id="num">
+                <button class="text-success">/</button>
+            </div>
+        </div>
+     
+        <div class="row text-primary text-center">
+            <div class="col" id="num">
+                <button class="text-primary">7</button>
+            </div>
+            <div class="col" id="num"> 
+                <button class="text-primary">8</button>
+            </div>
+            <div class="col"id="num">
+                <button class="text-primary">9</button>
+            </div>
+            <div class="col text-success"id="num">
+                <button class="text-success">*</button>
+            </div>
+        </div>
+        <div class="row text-primary text-center">
+            <div class="col"id="num">
+                <button class="text-primary">4</button>
+            </div>
+            <div class="col"id="num">
+                <button class="text-primary">5</button>
+            </div>
+            <div class="col"id="num">
+                <button class="text-primary">6</button>
+            </div>
+            <div class="col text-success" id="num" style="font-weight: bolder;">
+                <button class="text-success">-</button>
+            </div>
+        </div>
+        <div class="row text-primary text-center">
+            <div class="col" id="num">
+                <button class="text-primary">1</button>
+            </div>
+            <div class="col" id="num">
+                <button class="text-primary">2</button>
+            </div>
+            <div class="col" id="num">
+                <button class="text-primary">3</button>
+            </div>
+            <div id="num" class="col text-success" style="font-weight: bolder;">
+                <button class="text-success">+</button>
+            </div>
+        </div>
+        <div class="row text-primary text-center">
+            <div id="num" class="col-3">
+                <button class="text-primary">00</button>
+            </div>
+            <div id="num" class="col">
+                <button class="text-primary">0</button>
+            </div>
+            <div id="num" class="col" style="font-weight: bolder;">
+                <button class="text-primary">.</button>
+            </div>
+            <div id="num" class="col text-success" style="font-weight: bolder;">
+                <button class="text-success">=</button>
+            </div>
+        </div>
+        <div class="row"></div>
+        
+    </div>
+    
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script>
+        let s="";
+        const inp = document.querySelector("input");
+        const bt = document.querySelectorAll("button");
+        let btns=Array.from(bt);
+        btns.forEach(buttons=>{
+            buttons.addEventListener('click',(e)=>{
+                if(e.target.innerHTML=='='){
+                    console.log(s);
+                   s=eval(s);
+                   console.log(s);
+                   inp.value=s;
+                }
+                else if(e.target.innerHTML=="AC"){
+                    s="";
+                    inp.value=s;
+                }
+                else if(e.target.innerHTML== "DEL"){
+                    s=s.substring(0,s.length-1);
+                    inp.value=s;
+                }
+                else{
+                    s+=e.target.innerHTML;
+                    inp.value=s;
+                }
+            })
+        })
+    </script>
+</body>
+</html>

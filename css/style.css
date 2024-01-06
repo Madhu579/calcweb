@@ -1,0 +1,41 @@
+body{
+    background: linear-gradient(0deg,blue,rgb(130, 130, 223),rgb(89, 89, 210),blue);
+    background-image: url('../image/calc.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+   display: flex;
+   align-items: center;
+}
+input{
+    background-color: black;
+    padding: 9px;
+    color: rgb(221, 229, 236);
+    font-size: larger;
+    text-align: end;
+    border-radius: 10px;
+    border: 2px solid rgb(15, 31, 169);
+    box-shadow: 2px 2px 2px rgb(45, 9, 165);
+}
+.container{
+    
+    border: 2px solid rgb(43, 43, 226);
+    box-shadow: 3px 3px 4px rgb(43, 43, 226);
+}
+h1{
+    margin-top: 20px;
+}
+.row{
+margin: 10px;
+}
+button{
+    width: 40px;
+    height: 40px;
+   background-color: rgb(9, 9, 9);
+   padding: 5px;
+   border: 2px solid blue;
+   box-shadow: 2px 2px 2px rgb(130, 114, 114);
+   border-radius: 50%;
+   cursor: pointer;
+}
