@@ -1,6 +1,6 @@
 body{
     background: linear-gradient(0deg,blue,rgb(130, 130, 223),rgb(89, 89, 210),blue);
-    background-image: url('../image/calc.avif');
+    background-image: url('/image/calc.avif');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
