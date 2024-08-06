@@ -4,109 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
     <style>
-        .calculator-container {
-            background-color: black;
-            border-radius: 20px;
-            max-width: max-content;
-            max-height: max-content;
-            padding: 20px;
-        }
-        .calculator-button {
-            width: 100%;
-            height: 100%;
-            font-weight: bolder;
-        }
-        .calculator-display {
-            margin: 12px;
-            width: 97%;
-        }
+        body{
+    background: linear-gradient(0deg,blue,rgb(130, 130, 223),rgb(89, 89, 210),blue);
+    background-image: url('/image/calc.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+   display: flex;
+   align-items: center;
+}
+input{
+    background-color: black;
+    padding: 9px;
+    color: rgb(221, 229, 236);
+    font-size: larger;
+    text-align: end;
+    border-radius: 10px;
+    border: 2px solid rgb(15, 31, 169);
+    box-shadow: 2px 2px 2px rgb(45, 9, 165);
+}
+.container{
+    
+    border: 2px solid rgb(43, 43, 226);
+    box-shadow: 3px 3px 4px rgb(43, 43, 226);
+}
+h1{
+    margin-top: 20px;
+}
+.row{
+margin: 10px;
+}
+button{
+    width: 40px;
+    height: 40px;
+   background-color: rgb(9, 9, 9);
+   padding: 5px;
+   border: 2px solid blue;
+   box-shadow: 2px 2px 2px rgb(130, 114, 114);
+   border-radius: 50%;
+   cursor: pointer;
+}
+
     </style>
 </head>
 <body>
-    <div class="container calculator-container">
+    <div class="container" style="background-color: black;border-radius: 20px;max-width: max-content;max-height: max-content;">
         <h1 class="text-primary text-center">Calculator</h1>
         <div class="row">
             <div class="col">
-                <input type="text" value="0" class="calculator-display" readonly>
+                <input type="text"  value="0" style="margin: 12px; width: 97%;">
             </div>
         </div>
         <div class="row text-success">
             <div class="col text-center">
-                <button class="btn btn-danger calculator-button" type="button">AC</button>
+                <button class="text-danger">AC</button>
             </div>
-            <div class="col text-center">
-                <button class="btn btn-danger calculator-button" type="button">DEL</button>
+            <div class="col" id="num">
+                <button class="text-danger">DEL</button>
             </div>
-            <div class="col text-center">
-                <button class="btn btn-success calculator-button" type="button">%</button>
+            <div class="col  text-center" id="num">
+                <button class="text-success">%</button>
             </div>
-            <div class="col text-center">
-                <button class="btn btn-success calculator-button" type="button">/</button>
+            <div class="col  text-center" id="num">
+                <button class="text-success">/</button>
+            </div>
+        </div>
+     
+        <div class="row text-primary text-center">
+            <div class="col" id="num">
+                <button class="text-primary">7</button>
+            </div>
+            <div class="col" id="num"> 
+                <button class="text-primary">8</button>
+            </div>
+            <div class="col"id="num">
+                <button class="text-primary">9</button>
+            </div>
+            <div class="col text-success"id="num">
+                <button class="text-success">*</button>
             </div>
         </div>
         <div class="row text-primary text-center">
-            <div class="col">
-                <button class="btn btn-primary calculator-button" type="button">7</button>
+            <div class="col"id="num">
+                <button class="text-primary">4</button>
             </div>
-            <div class="col">
-                <button class="btn btn-primary calculator-button" type="button">8</button>
+            <div class="col"id="num">
+                <button class="text-primary">5</button>
             </div>
-            <div class="col">
-                <button class="btn btn-primary calculator-button" type="button">9</button>
+            <div class="col"id="num">
+                <button class="text-primary">6</button>
             </div>
-            <div class="col text-success">
-                <button class="btn btn-success calculator-button" type="button">*</button>
-            </div>
-        </div>
-        <div class="row text-primary text-center">
-            <div class="col">
-                <button class="btn btn-primary calculator-button" type="button">4</button>
-            </div>
-            <div class="col">
-                <button class="btn btn-primary calculator-button" type="button">5</button>
-            </div>
-            <div class="col">
-                <button class="btn btn-primary calculator-button" type="button">6</button>
-            </div>
-            <div class="col text-success">
-                <button class="btn btn-success calculator-button" type="button">-</button>
+            <div class="col text-success" id="num" style="font-weight: bolder;">
+                <button class="text-success">-</button>
             </div>
         </div>
         <div class="row text-primary text-center">
-            <div class="col">
-                <button class="btn btn-primary calculator-button" type="button">1</button>
+            <div class="col" id="num">
+                <button class="text-primary">1</button>
             </div>
-            <div class="col">
-                <button class="btn btn-primary calculator-button" type="button">2</button>
+            <div class="col" id="num">
+                <button class="text-primary">2</button>
             </div>
-            <div class="col">
-                <button class="btn btn-primary calculator-button" type="button">3</button>
+            <div class="col" id="num">
+                <button class="text-primary">3</button>
             </div>
-            <div class="col text-success">
-                <button class="btn btn-success calculator-button" type="button">+</button>
+            <div id="num" class="col text-success" style="font-weight: bolder;">
+                <button class="text-success">+</button>
             </div>
         </div>
         <div class="row text-primary text-center">
-            <div class="col-3">
-                <button class="btn btn-primary calculator-button" type="button">00</button>
+            <div id="num" class="col-3">
+                <button class="text-primary">00</button>
             </div>
-            <div class="col">
-                <button class="btn btn-primary calculator-button" type="button">0</button>
+            <div id="num" class="col">
+                <button class="text-primary">0</button>
             </div>
-            <div class="col">
-                <button class="btn btn-primary calculator-button" type="button">.</button>
+            <div id="num" class="col" style="font-weight: bolder;">
+                <button class="text-primary">.</button>
             </div>
-            <div class="col text-success">
-                <button class="btn btn-success calculator-button" type="button">=</button>
+            <div id="num" class="col text-success" style="font-weight: bolder;">
+                <button class="text-success">=</button>
             </div>
         </div>
+        <div class="row"></div>
+        
     </div>
-    
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             let expression = "";
