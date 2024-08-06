@@ -3,122 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calculator</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .calculator-container {
+            background-color: black;
+            border-radius: 20px;
+            max-width: max-content;
+            max-height: max-content;
+            padding: 20px;
+        }
+        .calculator-button {
+            width: 100%;
+            height: 100%;
+            font-weight: bolder;
+        }
+        .calculator-display {
+            margin: 12px;
+            width: 97%;
+        }
+    </style>
 </head>
 <body>
-    <div class="container" style="background-color: black;border-radius: 20px;max-width: max-content;max-height: max-content;">
+    <div class="container calculator-container">
         <h1 class="text-primary text-center">Calculator</h1>
         <div class="row">
             <div class="col">
-                <input type="text"  value="0" style="margin: 12px; width: 97%;">
+                <input type="text" value="0" class="calculator-display" readonly>
             </div>
         </div>
         <div class="row text-success">
             <div class="col text-center">
-                <button class="text-danger">AC</button>
+                <button class="btn btn-danger calculator-button" type="button">AC</button>
             </div>
-            <div class="col" id="num">
-                <button class="text-danger">DEL</button>
+            <div class="col text-center">
+                <button class="btn btn-danger calculator-button" type="button">DEL</button>
             </div>
-            <div class="col  text-center" id="num">
-                <button class="text-success">%</button>
+            <div class="col text-center">
+                <button class="btn btn-success calculator-button" type="button">%</button>
             </div>
-            <div class="col  text-center" id="num">
-                <button class="text-success">/</button>
-            </div>
-        </div>
-     
-        <div class="row text-primary text-center">
-            <div class="col" id="num">
-                <button class="text-primary">7</button>
-            </div>
-            <div class="col" id="num"> 
-                <button class="text-primary">8</button>
-            </div>
-            <div class="col"id="num">
-                <button class="text-primary">9</button>
-            </div>
-            <div class="col text-success"id="num">
-                <button class="text-success">*</button>
+            <div class="col text-center">
+                <button class="btn btn-success calculator-button" type="button">/</button>
             </div>
         </div>
         <div class="row text-primary text-center">
-            <div class="col"id="num">
-                <button class="text-primary">4</button>
+            <div class="col">
+                <button class="btn btn-primary calculator-button" type="button">7</button>
             </div>
-            <div class="col"id="num">
-                <button class="text-primary">5</button>
+            <div class="col">
+                <button class="btn btn-primary calculator-button" type="button">8</button>
             </div>
-            <div class="col"id="num">
-                <button class="text-primary">6</button>
+            <div class="col">
+                <button class="btn btn-primary calculator-button" type="button">9</button>
             </div>
-            <div class="col text-success" id="num" style="font-weight: bolder;">
-                <button class="text-success">-</button>
-            </div>
-        </div>
-        <div class="row text-primary text-center">
-            <div class="col" id="num">
-                <button class="text-primary">1</button>
-            </div>
-            <div class="col" id="num">
-                <button class="text-primary">2</button>
-            </div>
-            <div class="col" id="num">
-                <button class="text-primary">3</button>
-            </div>
-            <div id="num" class="col text-success" style="font-weight: bolder;">
-                <button class="text-success">+</button>
+            <div class="col text-success">
+                <button class="btn btn-success calculator-button" type="button">*</button>
             </div>
         </div>
         <div class="row text-primary text-center">
-            <div id="num" class="col-3">
-                <button class="text-primary">00</button>
+            <div class="col">
+                <button class="btn btn-primary calculator-button" type="button">4</button>
             </div>
-            <div id="num" class="col">
-                <button class="text-primary">0</button>
+            <div class="col">
+                <button class="btn btn-primary calculator-button" type="button">5</button>
             </div>
-            <div id="num" class="col" style="font-weight: bolder;">
-                <button class="text-primary">.</button>
+            <div class="col">
+                <button class="btn btn-primary calculator-button" type="button">6</button>
             </div>
-            <div id="num" class="col text-success" style="font-weight: bolder;">
-                <button class="text-success">=</button>
+            <div class="col text-success">
+                <button class="btn btn-success calculator-button" type="button">-</button>
             </div>
         </div>
-        <div class="row"></div>
-        
+        <div class="row text-primary text-center">
+            <div class="col">
+                <button class="btn btn-primary calculator-button" type="button">1</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary calculator-button" type="button">2</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary calculator-button" type="button">3</button>
+            </div>
+            <div class="col text-success">
+                <button class="btn btn-success calculator-button" type="button">+</button>
+            </div>
+        </div>
+        <div class="row text-primary text-center">
+            <div class="col-3">
+                <button class="btn btn-primary calculator-button" type="button">00</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary calculator-button" type="button">0</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary calculator-button" type="button">.</button>
+            </div>
+            <div class="col text-success">
+                <button class="btn btn-success calculator-button" type="button">=</button>
+            </div>
+        </div>
     </div>
     
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script>
-        let s="";
-        const inp = document.querySelector("input");
-        const bt = document.querySelectorAll("button");
-        let btns=Array.from(bt);
-        btns.forEach(buttons=>{
-            buttons.addEventListener('click',(e)=>{
-                if(e.target.innerHTML=='='){
-                    console.log(s);
-                   s=eval(s);
-                   console.log(s);
-                   inp.value=s;
-                }
-                else if(e.target.innerHTML=="AC"){
-                    s="";
-                    inp.value=s;
-                }
-                else if(e.target.innerHTML== "DEL"){
-                    s=s.substring(0,s.length-1);
-                    inp.value=s;
-                }
-                else{
-                    s+=e.target.innerHTML;
-                    inp.value=s;
-                }
-            })
-        })
+        document.addEventListener('DOMContentLoaded', () => {
+            let expression = "";
+            const input = document.querySelector("input");
+            const buttons = document.querySelectorAll("button");
+            
+            buttons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const value = e.target.innerHTML;
+
+                    if (value === '=') {
+                        try {
+                            expression = Function('"use strict"; return (' + expression + ')')();
+                        } catch {
+                            expression = "Error";
+                        }
+                        input.value = expression;
+                    } else if (value === 'AC') {
+                        expression = "";
+                        input.value = expression;
+                    } else if (value === 'DEL') {
+                        expression = expression.slice(0, -1);
+                        input.value = expression;
+                    } else {
+                        expression += value;
+                        input.value = expression;
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
